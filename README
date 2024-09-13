@@ -1,0 +1,34 @@
+==========================
+=  SiMath - version 1.0  =
+==========================
+
+Examples
+------------
+How to use SiMath is illustrated with some examples.
+
+In the directory "examples" of the source distribution, there are currently two example programs and 
+one data file data.tab. The data matrix comes from the benchmark iris data set (used for instance
+in R). It has 150 data points with 5 variables. The first column gives the class label. There are three
+different classes and each class has 50 members.
+ 
+The first example reads in the data, normalises the columns to have zero mean and unit variance. 
+This normalised data matrix is then used to train an SVM classificator. The predicted labels are
+printed.
+ 
+The second example reads in the data and the number of clusters requested.
+Then it normalises the columns to have zero mean and unit variance  and transforms 
+the data matrix using PCA. Finally a k-means clustering is done using the predefined number 
+of clusters. The cluster numbers are printed in 3 columns corresponding to the three classes.
+ 
+To compile the code against the compiled version of libSiMath, you should use a command like 
+(if SiMath is installed in the default location)
+
+  # first example
+  $ g++ -I/usr/local/include -L/usr/local/lib -lsimath -o example1 example1.cpp
+  $ ./example1 data.tab
+		
+  # second example 
+  $ g++ -I/usr/local/include -L/usr/local/lib -lsimath -o example2 example2.cpp
+  $ ./example2 data.tab 3
+
+
